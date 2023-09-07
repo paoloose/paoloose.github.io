@@ -20,7 +20,7 @@ import GitHubLink from "@components/GitHubLink.astro";
     <Loading width={90} />
     <section>
       <p>This page is pretty much work in progress!</p>
-      <span><GitHubLink /> · Paolo Flores</span>
+      <span><GitHubLink />&nbsp;· Paolo Flores</span>
     </section>
   </footer>
 </Layout>
@@ -36,7 +36,7 @@ import GitHubLink from "@components/GitHubLink.astro";
     align-items: center;
     margin: 0 auto;
     max-width: 100ch;
-    padding: 3rem 0;
+    padding: 3rem 1.5rem;
   }
 
   #content {
@@ -47,6 +47,7 @@ import GitHubLink from "@components/GitHubLink.astro";
     max-width: 100ch;
     margin-bottom: 4rem;
     padding-bottom: 1rem;
+    padding: 0 1.5rem;
 
     h2 {
       font-size: 1.4rem;
@@ -73,12 +74,6 @@ import GitHubLink from "@components/GitHubLink.astro";
         align-items: center;
         font-size: 0.84rem;
       }
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    main {
-      padding: 3rem 1rem;
     }
   }
 </style>
