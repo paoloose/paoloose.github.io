@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import githubLogo from "@assets/github_light.svg";
+---
+
+<span>
+  <Image src={githubLogo} alt="The GitHub logo" width={15} />
+  <a href="https://github.com/paoloose" target="_blank">@paoloose</a>
+</span>
+
+<style lang="scss">
+  span {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    line-height: 2;
+
+    img {
+      margin-right: 4px;
+    }
+  }
+</style>

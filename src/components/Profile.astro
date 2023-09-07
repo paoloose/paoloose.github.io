@@ -1,0 +1,54 @@
+---
+import profile from '@assets/pfp.png';
+import { Image } from 'astro:assets';
+import GitHubLink from "@components/GitHubLink.astro";
+---
+
+<section>
+  <Image id="pfp" src={profile} alt="@paoloose profile picture" width={125} />
+  <div id="profile">
+    <h1>Paolo Flores</h1>
+    <div id="description">
+      <p>Software Engineering student</p>
+      <p>I love doing backend, frontend, graphics and computer science stuff</p>
+    </div>
+    <div id="github">
+      <GitHubLink />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    display: flex;
+
+    #pfp {
+      margin-right: 1rem;
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 12px 0 6px 0;
+    }
+
+    #description p {
+      margin: 0px 0px 8px 0px;
+      font-size: 1rem;
+      // text-wrap: balance;
+
+      &:first-child {
+        color: #645e5e;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    section {
+      flex-direction: column;
+
+      #profile {
+        max-width: 300px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Loading from '@components/Loading.astro';
+import Header from '@components/Header.astro';
+import Profile from '@components/Profile.astro';
+import Repositories from '@components/Repositories.astro';
+import GitHubLink from "@components/GitHubLink.astro";
+---
+
+<Layout title="🐢 Paoloose's corner of the internet">
+  <Header />
+  <main>
+    <Profile />
+  </main>
+  <article id="content">
+    <h2>Some of my projects</h2>
+    <Repositories />
+  </article>
+  <footer>
+    <Loading width={90} />
+    <section>
+      <p>This page is pretty much work in progress!</p>
+      <span><GitHubLink /> · Paolo Flores</span>
+    </section>
+  </footer>
+</Layout>
+
+<style lang="scss">
+  body {
+    margin: 0 auto;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100ch;
+    padding: 3rem 0;
+  }
+
+  #content {
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100ch;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+
+      p {
+        margin-bottom: 4px;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        font-size: 0.84rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    main {
+      padding: 3rem 1rem;
+    }
+  }
+</style>

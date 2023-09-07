@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Paolo Flores is a Software Enginnering student at the National University of San Marcos. He loves writing high quality software and building amazing projects applying Computer Science and Software Engineering theory!"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root{
+    --border-color: #d9d9d9;
+    --header-height: 3rem;
+  }
+
+  html {
+    font-size: 1rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a:visited {
+    color: unset;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

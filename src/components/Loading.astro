@@ -1,0 +1,12 @@
+---
+import loading from '@assets/ghloading.gif';
+import { Image } from 'astro:assets';
+
+interface Props {
+  width: number
+}
+
+const { width } = Astro.props;
+---
+
+<Image src={loading} width={width} alt="Loading page... Stay tuned!" />
