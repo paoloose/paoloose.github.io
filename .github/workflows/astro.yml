@@ -25,6 +25,8 @@ env:
 jobs:
   build:
     name: Build
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
