@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BUILD_PATH: "./frontend"
+  BUILD_PATH: "."
 
 jobs:
   build:
