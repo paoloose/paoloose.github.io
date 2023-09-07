@@ -3,7 +3,7 @@ import type { Repository } from '@types';
 
 const ghfetch = (url: string) => fetch(url, {
   headers: {
-    'Authorization': `Bearer ${import.meta.env.GITHUB_TOKEN}`,
+    'Authorization': `Bearer ${import.meta.env.GH_TOKEN}`,
     'Accept': 'application/vnd.github+json'
   }
 }).then(r => r.json());
