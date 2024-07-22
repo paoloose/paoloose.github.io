@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import githubLogo from "@assets/github_light.svg";
+import githubLogo from "@assets/github_logo.svg?raw";
 ---
 
 <span>
-  <Image src={githubLogo} alt="The GitHub logo" width={15} />
+  <Fragment set:html={githubLogo} />
+  <div style="margin-right: 6px"></div>
   <a href="https://github.com/paoloose" target="_blank">@paoloose</a>
 </span>
 
@@ -17,6 +17,14 @@ import githubLogo from "@assets/github_light.svg";
 
     img {
       margin-right: 4px;
+    }
+  }
+</style>
+
+<style lang="scss" is:global>
+  :root.dark {
+    #github_logo__color {
+      fill: #e5e3e0;
     }
   }
 </style>

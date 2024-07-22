@@ -8,11 +8,10 @@ const ghfetch = (url: string) => fetch(url, {
   }
 }).then(r => r.json());
 
-const API_URL = 'https://api.github.com/users/paoloose/repos';
+const API_URL = 'https://api.github.com/users/paoloose/repos?sort=pushed&per_page=100';
 const repos: Repository[] = await ghfetch(API_URL);
 
 const sortedRepos = repos
-  .sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime())
   .filter(repo => repo.name !== 'paoloose' && !repo.fork);
 ---
 
@@ -40,7 +39,6 @@ const sortedRepos = repos
 
     a, a:visited {
       display: inline-block;
-      color: #160e18;
       font-size: 1.1rem;
     }
 
@@ -55,6 +53,13 @@ const sortedRepos = repos
       font-size: 12px;
       border-radius: 4px;
       margin-right: 6px;
+    }
+  }
+
+  :root.dark {
+    span.lang-tag {
+      background-color: #333;
+      color: #e5e3e0;
     }
   }
 </style>

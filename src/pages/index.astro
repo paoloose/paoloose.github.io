@@ -8,7 +8,7 @@ import GitHubLink from "@components/GitHubLink.astro";
 import ActivityChart from '@components/ActivityChart.astro';
 ---
 
-<Layout title="Paolo's corner of the internet">
+<Layout title="Paolo's personal site">
   <Header />
   <main>
     <Profile />
@@ -30,6 +30,7 @@ import ActivityChart from '@components/ActivityChart.astro';
 <style lang="scss">
   body {
     margin: 0 auto;
+    background-color: var(--bg-color);
   }
 
   main {
@@ -42,8 +43,8 @@ import ActivityChart from '@components/ActivityChart.astro';
   }
 
   #content {
-    border-top: 1px solid #dcdcdc;
-    border-bottom: 1px solid #dcdcdc;
+    border-top: 1px solid var(--divisor-color);
+    border-bottom: 1px solid var(--divisor-color);
     margin: 0 auto;
     width: 100%;
     max-width: 100ch;

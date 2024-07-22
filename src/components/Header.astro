@@ -1,8 +1,24 @@
 ---
+import themSwitcherLogo from '@assets/theme_switch.svg?raw';
+
 ---
 <header>
   <a href="/" target="_self"><h3>@paoloose</h3></a>
+  <div style="flex: 1"></div>
+  <button id="theme-switcher">
+    <Fragment set:html={themSwitcherLogo} />
+  </button>
+
 </header>
+
+<script>
+  const switcher = document.getElementById('theme-switcher');
+
+  switcher.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
 
 <style lang="scss">
   header {
@@ -12,8 +28,7 @@
     width: 100%;
     height: var(--header-height);
 
-    background-color: #fdfdfd;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--divisor-color);
     padding: 0 2.5rem;
 
     h3 {
@@ -21,11 +36,25 @@
       padding: 0;
       font-weight: 200;
     }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
   }
 
-    @media screen and (max-width: 840px) {
-      header {
-        padding: 0 1.5rem;
-      }
+  @media screen and (max-width: 840px) {
+    header {
+      padding: 0 1.5rem;
     }
+  }
+</style>
+
+<style lang="scss" is:global>
+  :root.dark {
+    #theme_switcher__color {
+      fill : #e5e3e0;
+    }
+  }
 </style>
