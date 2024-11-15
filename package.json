@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@types/node": "^20.14.11",
-    "astro": "^3.6.5",
+    "@types/node": "^22.1.0",
+    "astro": "^4.13.1",
     "sass": "^1.66.1"
   }
 }
