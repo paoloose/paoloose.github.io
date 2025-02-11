@@ -3,6 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@common/*": [
+        "src/features/common/*"
+      ],
       "@components/*": [
         "src/components/*"
       ],

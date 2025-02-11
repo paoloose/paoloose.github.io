@@ -1,7 +1,8 @@
 ---
 import type { Repository } from '@types';
+import { wfetch } from '@common/wrappers/fetch';
 
-const ghfetch = (url: string) => fetch(url, {
+const ghfetch = (url: string) => wfetch(url, {
   headers: {
     'Authorization': `Bearer ${import.meta.env.GH_TOKEN}`,
     'Accept': 'application/vnd.github+json'
