@@ -104,3 +104,5 @@ export interface Owner {
   type: "User" | "Organization";
   url: string;
 }
+
+export type LangsResponse = { [l: string]: number };
