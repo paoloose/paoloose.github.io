@@ -1,13 +1,13 @@
 ---
-import type { Repository } from '@types';
 import { wfetch } from '@common/wrappers/fetch';
+import type { Repository, LangsResponse } from '@types';
 
-const ghfetch = (url: string) => wfetch(url, {
+const ghfetch = (url: string) => wfetch<any>(url, {
   headers: {
     'Authorization': `Bearer ${import.meta.env.GH_TOKEN}`,
     'Accept': 'application/vnd.github+json'
   }
-}).then(r => r.json());
+});
 
 const API_URL = 'https://api.github.com/users/paoloose/repos?sort=pushed&per_page=100';
 const repos: Repository[] = await ghfetch(API_URL);
@@ -17,16 +17,15 @@ const sortedRepos = repos
 ---
 
 {
-  sortedRepos.map(repo => (
+  sortedRepos.map((repo) => (
     <div class="repo">
       <a href={repo.html_url} target="_blank">{repo.name}</a>
       <p>{repo.description}</p>
       <div>
         {
           (async () => {
-            const langs = await ghfetch(repo.languages_url);
-            return Object.keys(langs)
-              .map(lang => <span class="lang-tag">{lang}</span>);
+            const langs: LangsResponse = await ghfetch(repo.languages_url);
+            return Object.keys(langs).map(lang => <span class="lang-tag">{lang}</span>);
           })()
         }
       </div>
