@@ -1,11 +1,11 @@
 ---
-import profile from '@assets/pfp.png';
+import profile from '@assets/images/image.png';
 import { Image } from 'astro:assets';
 import GitHubLink from "@components/GitHubLink.astro";
 ---
 
 <section>
-  <Image id="pfp" src={profile} alt="@paoloose profile picture" width={125} />
+  <Image id="pfp" src={profile} alt="@paoloose profile picture" width={250} />
   <div id="profile">
     <h1>Paolo Flores</h1>
     <div id="description">
@@ -21,23 +21,32 @@ import GitHubLink from "@components/GitHubLink.astro";
 <style lang="scss">
   section {
     display: flex;
+    align-items: center;
 
     #pfp {
-      margin-right: 1rem;
-      border-radius: 50%;
+      margin-right: 1.5rem;
+      border-radius: 3px;
+      // border-radius: 50%;
     }
 
-    h1 {
-      margin: 12px 0 6px 0;
-    }
+    #profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-    #description p {
-      margin: 0px 0px 8px 0px;
-      font-size: 1rem;
-
-      &:first-child {
-        color: var(--font-color-secondary);
+      h1 {
+        margin: 0px 0 6px 0;
       }
+
+      #description p {
+        margin: 0px 0px 8px 0px;
+        font-size: 1rem;
+
+        &:first-child {
+          color: var(--font-color-secondary);
+        }
+      }
+
     }
   }
 
