@@ -13,11 +13,14 @@ import themSwitcherLogo from '@assets/theme_switch.svg?raw';
 
 <script>
   const switcher = document.getElementById('theme-switcher');
-
-  switcher.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
+  if (!switcher) {
+    alert('MISSING theme-switcher element');
+  } else {
+    switcher.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
 </script>
 
 <style lang="scss">
@@ -38,6 +41,10 @@ import themSwitcherLogo from '@assets/theme_switch.svg?raw';
     }
 
     button {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
       background: none;
       border: none;
       cursor: pointer;
